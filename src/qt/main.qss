@@ -1,0 +1,37 @@
+QTabWidget::pane 
+{
+    background-image:
+    url(':/images/wallet_bgcoin.png');
+    position: absolute;
+    top: -0.5em;
+}
+     
+QTabWidget::tab-bar
+{
+    background-image:
+    url(':/images/wallet_bgcoin.png');
+    alignment: center;
+}
+     
+QTabBar::tab
+{
+    height:50px;
+    background:#EBEBEB;
+    border: 1px solid #DCDDDF;
+    padding: 6px;
+}
+     
+QTabBar::tab:hover
+{
+    background-color: #FFCC00;
+}
+     
+QTabBar::tab:selected
+{
+    background-color: #F7F7F7;
+}
+
+*
+{
+    background-color: blue;
+}

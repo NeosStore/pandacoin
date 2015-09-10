@@ -1,0 +1,9 @@
+Building Pandacoin
+
+See doc/readme-qt.rst for instructions on building Pandacoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Pandacoin.
+
+See doc/build-*.txt for instructions on building pandacoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Pandacoin.

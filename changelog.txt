@@ -1,0 +1,82 @@
+3.0.2
+
+
+Initial translation of UI into zh_TW (Traditional Chinese).
+New buttons to reset peers and blockchains from within settings dialog (Advanced tab) - this will make assisting anyone who has issues much smoother.
+Change various asserts for bad blockchain; which forced the application to close; to instead show a clear warning dialog and then automatically reset the blockchain and resync, this is much more user friendly, although obviously a last resort as focus is still on avoiding such error conditions to begin with.
+Initial support for building using c++11 support, however commented out for now will some issues are ironed out. NB! If you are building from source with c++11 enable you will need to use a version of boost with c++11 support enabled as well.
+Change alert system so that there are no popups for empty alerts.
+Silence the 3.0.0 upgrade alert.
+Add new RPC/console command 'renameaccount' to change the name of an account in a proper way, without any negeative side effects (creating new accounts) that 'setaccount' has - 'setaccount' is kept for backwards compatibility but 'renameaccount' should be preffered.
+Fix some minor issues with renaming accounts that may have caused some RPC commands to work in correctly in some cases.
+Improve 'listaccounts' RPC/console command so that balances are correct in more instances, e.g. if payments have been made via UI and not just via 'sendfrom' command.
+Change 'sendfrom' and 'sendmany' RPC/console commands so that they can work on either address or account names.
+Change 'sendfrom' and 'sendmany' RPC/console commands so that they can take a blank 'from' account, in which case they will draw funds from all accounts in the walley as needed.
+Change 'sendalert' RPC command so that it takes an optional array of 'subversions' as the final paramater - e.g. ["/Pandoshi:3.0.0/","/Pandoshi:2.6.5/"] - this way we can target specific versions in future if the need arises.
+Fix some errors in --help text (Incorrect default port was showing).
+Merge in some changes that will allow fow much better/clearer help text within RPC/command window.
+Merge in updated and improved help/description text for most commands in RPC/command window.
+Merge in some changes that allow accounts to have more information associated with them than just a name, not currently fully exposed by client but paves the way for future development.
+Merge in some changes that allow for 'watch only' accounts - not yet fully enabled but paves the way to enable this in a future release.
+Merge in improved logging functions, that will allow for better debug logging and fix some rare logging related issues when closing client.
+Various other minor code refactoring/improvements.
+Merge in some minor security improvements - wipe RNG number data from memory immediately in some instances where it was not.
+Merge in random number improvement that improves coin selection when making payments.
+Various minor code changes to get a new testnet running, testnet is configured in such a way that it will overtake and stay ahead of main chain to help spot any future issues in advance.
+Turn IRC node discovery off by default for testnet.
+
+3.0.1
+
+Fix an issue that was leading to small font sizes on some OSX systems.
+Make toolbar menu icons visible on OSX systems.
+Initial translation of UI into zh_CN (Simplified Chinese).
+New command line option -qm that can be used to give an abolute path to a .qm localistation file (generater by qt-linguist) - this is useful for UI translators who want to test their translations.
+Speed improvement for 'verify' phase of hybrid syncing.
+Fix an issue - for hybrid mode - that was causing invalid stakes for some users.
+Improve some text/messages within UI and ensure text/messages that could not be localist can now be localised, to allow for full localisation by translators.
+Allow translators to select the UI fonts they want used as each language should ideally have its own fonts rather than blindly using the same fonts.
+Fix a UI issue with transaction grid 'summary header' whereby some of the balances would, in some instances, no longer be visible if shrinking a maximised window.
+Replace pandachain.net with pnd.showed.us as blockchain explorer.
+Fix an issue in 'transfer pane' where holding down the mouse over 'add another button' would incorrectly perform the action multiple times.
+Fix some usability issues in transfer pane UI, inform user if trying to make a payment with no from address selected, better error message if balance is short due to staking and other minor changes.
+
+
+3.0.0
+
+Major:
+	New light mode, which works only on headers and latest blocks and is unable to stake - similar to 'light' clients offered by several other coins.
+	New hybrid mode, which is something new to the crypto world, starts off by doing the equivalent of 'light' mode and then *rapidly* downloads the rest of the blockchain allowing the user to stake and be fully
+	secure. A full blockchain download via this method is much faster than with a classic client.
+    New 'classic' mode which is essentially the same as what previous wallets were.
+
+Minor:
+	IO: Fix regression in 2.1.2 - Clicking an account name in overview page was not jumping to transaction grid, it now does this properly again.
+	CORE: Change console command "getbalance account" so that it returns a meaningful balance instead of always returning 0. (Only works on top level accounts for now)
+	CORE: Change console command(s) "sendfrom" and "sendmany" to reuse new codebase and work in a more correct manner. They were incorrectly taking money from accounts other than the one specified in the command line.
+	App: Default account created with name "My account" instead of no name when creating a new wallet.
+	UI: Update icons and logo for cleaner look.
+	UI: Tweak minimum size a little to prevent glitches with small window sizes.
+	UI: Improve progress messages.
+
+2.1.2
+
+Wallet no longer loses its staking status when doing an action that requires a full unlock, 'unlock for staking' is preserved across actions.
+Add a right click context menu to portfolio overview so that account address can be easily copied.
+Fix color issues on systems with 'non standard' color themes.
+Cap the 'transaction fee' setting in options dialog at 100PND to prevent users accidentally setting it too high.
+Fixes to transaction history in some problem cases where transaction history was incorrect.
+Show fee transactions seperately so that transaction history is less confusing and more like a regular bank account.
+Fix problem on rare machines where transaction view table would expand to infinite width.
+Fix display issues with large account names.
+Other minor UI tweaks.
+
+2.1.1
+
+Fixed error that was displaying when running for the first time on a new machine.
+Visual improvements to transactions grid and transactions summary.
+Various minor visual usability improvements.
+Fix some stability issues that were affecting users with older/larger wallets.
+Large speed improvements for people with bigger/older wallets.
+Improvements to the display of transaction history and fix some errors in transaction history display
+Fix an issue with quick transfer account selection.
+Sending to an account with no label no longer adds the account to your address book.

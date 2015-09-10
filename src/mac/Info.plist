@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>pandacoin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>pandacoin</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleShortVersionString</key>
+        <string>3.0.2</string>
+	<key>CFBundleVersion</key>
+        <string>3.0.2</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIconFile</key>
+	<string>PandaCoin.icns</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© PandaCoin</string>
+	<key>CFBundleSignature</key>
+	<string>PND</string>
+	<key>CFBundleExecutable</key>
+	<string>PandaCoin-Qt</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.pandacoin.wallet-qt</string>
+	<key>CFBundleName</key>
+	<string>PandaCoin-Qt</string>
+</dict>
+</plist>
